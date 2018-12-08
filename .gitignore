@@ -1,0 +1,17 @@
+*.exe
+!*.c
+!*.py
+!*.bash
+*.out
+*.cpp
+*.pyb
+*.x86
+*.x64
+*
+*.*
+*.S
+*.s
+*.asm
+*.objc
+*.cs
+*.fs
