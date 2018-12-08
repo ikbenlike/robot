@@ -1,0 +1,22 @@
+{
+  "name": "robot",
+  "version": "0.0.0",
+  "description": "move the thing",
+  "main": "run_me.js",
+  "scripts": {
+    "test": "no"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikbenlike/robot.git"
+  },
+  "keywords": [
+    "stop"
+  ],
+  "author": "1EC7",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/ikbenlike/robot/issues"
+  },
+  "homepage": "https://github.com/ikbenlike/robot#readme"
+}
