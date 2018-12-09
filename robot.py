@@ -16,6 +16,7 @@ class Switcharoo:
     def opt_3(self):
         return "ADVANCE"
 
+from os import *
 def translate(str):
     for l in str:
         a = Switcharoo()
@@ -23,5 +24,6 @@ def translate(str):
         c = a.dispatcher(b)
         system(f"./scripts/movement.sh {c}")
 
+from builtins import *
 with open("data/command.text", "r") as f:
     translate(f.read())
