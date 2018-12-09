@@ -3,7 +3,7 @@ if [ $1 = "RIGHT" ]; then
 fi
 
 if [ $1 = "LEFT" ]; then
-    #invoke forth
+$0 RIGHT; $0 RIGHT; $0 RIGHT;
 fi
 
 if [ $1 = "ADVANCE" ]; then
