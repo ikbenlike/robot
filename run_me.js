@@ -25,5 +25,7 @@ for (i = 0; i<r.length; i++)
         newr = newr + r[i];
   else newr = newr + ")";
 
+const direction_facing_to = require('child_process').exec("bash ./scripts/translate.bash " + RobotDirectionFace + " && echo $?")
+
 FS = require('fs')
 require('fs').writeFileSync('file.sql', String(newr))
