@@ -15,3 +15,5 @@
 *.objc
 *.cs
 *.fs
+*.json
+*.js

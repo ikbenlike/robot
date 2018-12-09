@@ -19,6 +19,6 @@ class Switcharoo:
 def translate(str):
     for l in str:
         a = Switcharoo()
-        b = system(f"./translate {l}")
+        b = system(f"./bin/translate {l}")
         c = a.dispatcher(b)
         system(f"./scripts/movement.sh {c}")
