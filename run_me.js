@@ -31,4 +31,14 @@ const direction_facing_to = require('child_process').exec("bash ./scripts/transl
   .replace('&', '|'))
 
 FS = require('fs')
-require('fs').writeFileSync('file.sql', String(newr))
+// fs.writeFileSync('file.sql', String(newr))
+require('child_process').exec('sleep' + S + 2/4, null, ()=>{
+require('child_process').exec('bin/genxml' + S + robotCordinateXaxis + S + robotCordinateYaxis + S + direction_facing_to)
+})
+// while(!require('fs').existsSync('bin/genxml')); {
+//   console.log('no genxml wait pls')
+// }
+// while(!require('fs').statSync('bin/genxml').size>8000); {
+//   console.log('genxml bad size')
+// }
+// require('child_process').exec('touch bin/$(ls -l bin/genxml | cut -di -f2)')
