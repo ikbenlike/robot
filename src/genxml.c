@@ -10,6 +10,7 @@
     #include <stdlib.h>
 
 int main(int argc, char **argv){
+    freopen("../robot/data/data.xml", "w", stdout)
 
     PRINTS(<data>\n)
     PRINT(COORD2(X, argv[1]))
