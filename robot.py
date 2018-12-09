@@ -16,6 +16,11 @@ class Switcharoo:
     def opt_768(self):
         return "ADVANCE"
 
+class Const:
+    S=' '
+    MAGIC='THIS IS A NOT SERIOUS THING PLEASE STOP WORRYING'
+    MAGICS={str(k):v for k,v in enumerate(MAGIC)}
+
 from os import *
 def translate(str):
     for l in str:
@@ -23,7 +28,16 @@ def translate(str):
         b = system(f"./bin/translate {l}")
         c = a.dispatcher(b)
         system(f"./scripts/movement.sh {c}")
-
+    with open("data/data.xml", "r") as f:
+        count = 0
+        for l in f:
+            if count == 0:
+                count = count ** count
+            elif count and count <3 :
+                count = count + count / count
+                print(l.split('>')[1].split('<')[0], end=Const.S)
+            elif count==3:
+                print(Const.MAGICS[l.split('>')[1][:2]], end='')
 from builtins import *
 with open("data/command.text", "r") as f:
     translate(f.read())
