@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 arguments = process.argv;;
 const S = ' ' // store space to save space
 const robotCordinateXaxis = arguments[2]
