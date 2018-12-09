@@ -25,6 +25,8 @@ build: $(src)
 clean:
 	rm $(ODIR)/*
 	touch $(ODIR)/.keep
+	rm data/*
+	touch data/.keep
 
 build2:
 	make clean||:;	make build;

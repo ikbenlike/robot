@@ -1,5 +1,7 @@
 if [ $1 = "RIGHT" ]; then
-    #invoke forth
+    a=$(sbcl --script scripts/lissp/extract.lisp D)
+    b=$(gforth -e "$(echo $a)" scripts/forths/move_right.forth -e "turn-right bye")
+    bash -c "bin/genxml $(sbcl --script scripts/lissp/extract.lisp X) $(sbcl --script scripts/lissp/extract.lisp Y) $a"
 fi
 
 if [ $1 = "LEFT" ]; then
