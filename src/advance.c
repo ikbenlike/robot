@@ -17,7 +17,7 @@ void wnum(char **buf, int off, int v) {
     **buf=0;
 }
 
-int read(FILE* fileToRead) {
+int __read(FILE* fileToRead) {
     Bool isminus = 0;
     Bool isokay = 0;
     int result_number = 0;
@@ -61,7 +61,7 @@ while(!0) {
     if (c=='>') mode='r';
     if (c=='d') coor=c;
     if (mode=='r') {
-        int v = read(f);
+        int v = __read(f);
         if ( v == 0xBAD ) ; else {
             if (coor=='X')
                 x=v;
@@ -98,6 +98,6 @@ argv[1] = buff;
 argv[2] = argv[1] + 4;
 argv[3] = argv[2] + 4;
 
-#include "unistd.h"
-execv("bin/genxml", argv);
+#include "unistd.h";
+execv("./bin/genxml", argv);
 }
