@@ -14,7 +14,7 @@ run:
 
 ROBOT:
 	@sleep 1 # wait for callbacks
-	@echo $(DO) > data/command.text
+	@echo -n $(DO) > data/command.text
 	@make -s run||:
 
 build: $(src)

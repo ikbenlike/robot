@@ -7,13 +7,13 @@ class Switcharoo:
         method = getattr(self, method_name, lambda: "Not a direction")
         return method()
 
-    def opt_1(self):
+    def opt_256(self):
         return "RIGHT"
 
-    def opt_2(self):
+    def opt_512(self):
         return "LEFT"
 
-    def opt_3(self):
+    def opt_768(self):
         return "ADVANCE"
 
 from os import *
