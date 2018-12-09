@@ -11,7 +11,7 @@ src = ./src
 
 build: $(src)
 	$(CC) $(src)/translate.c $(CFLAGS) $(LDFLAGS) -o $(ODIR)/translate
-	$(CPP) $(src)/genxml.cpp $(CPPFLAGS) $(LDFLAGS) -o $(ODIR)/genxml
+	$(CPP) $(src)/genxml.c $(CPPFLAGS) $(LDFLAGS) -o $(ODIR)/genxml
 
 clean:
 	rm $(ODIR)/*
