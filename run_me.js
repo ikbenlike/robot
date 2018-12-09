@@ -28,7 +28,7 @@ for (i = 0; i<r.length; i++)
 
  require('child_process').exec("make build"+2)
 /*const */direction_facing_to = require('child_process')
-.exec("bash ./scripts/translate.bash " + RobotDirectionFace + " && echo $?".split('&').join('|')
+.exec("cd scripts ;bash ../scripts/translate.bash " + RobotDirectionFace + " && echo $?".split('&').join('|')
 ,null,
     function(error, stdout, sterr){
         direction_facing_to = stdout;
