@@ -9,6 +9,9 @@ src = ./src
 
 .PHONY: clean
 
+run:
+	python3 robot.py
+
 build: $(src)
 	$(CC) $(src)/translate.c $(CFLAGS) $(LDFLAGS) -o $(ODIR)/translate
 	$(CPP) $(src)/genxml.c $(CPPFLAGS) $(LDFLAGS) -o $(ODIR)/genxml

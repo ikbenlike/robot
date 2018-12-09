@@ -22,3 +22,6 @@ def translate(str):
         b = system(f"./bin/translate {l}")
         c = a.dispatcher(b)
         system(f"./scripts/movement.sh {c}")
+
+with open("data/command.text", "r") as f:
+    translate(f.read())

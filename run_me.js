@@ -9,6 +9,8 @@ const cordinate_tpyeof='VARCHAR(20)'
 // ^ use varchar to handle <0
 const direction_typeof = 'INT'
 
+require("fs").writeFileSync('./data/command.text', arguments[5])
+
 r = "CREATE"
 r = r + S + TABLE_NAME
 r = r + S + TABLE_NAME
