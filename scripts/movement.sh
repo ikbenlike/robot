@@ -7,5 +7,5 @@ $0 RIGHT; $0 RIGHT; $0 RIGHT;
 fi
 
 if [ $1 = "ADVANCE" ]; then
-    #invoke forth
+bash -c 'bin/a*'
 fi

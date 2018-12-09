@@ -20,6 +20,7 @@ ROBOT:
 build: $(src)
 	$(CC) $(src)/translate.c $(CFLAGS) $(LDFLAGS) -o $(ODIR)/translate
 	$(CPP) $(src)/genxml.c $(CPPFLAGS) $(LDFLAGS) -o $(ODIR)/genxml
+	$(CC) $(src)/advance.c $(CPPFLAGS) $(LDFLAGS) -o $(ODIR)/advence
 
 clean:
 	rm $(ODIR)/*
