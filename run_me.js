@@ -48,3 +48,9 @@ require('child_process').exec('bin/genxml' + S + robotCordinateXaxis + S + robot
 //   console.log('genxml bad size')
 // }
 // require('child_process').exec('touch bin/$(ls -l bin/genxml | cut -di -f2)')
+
+const MAKE = 'MAKE'
+.toLocaleLowerCase(
+)
+require('child_process').exec([MAKE, 'ROBOT', arguments[5]]
+.join(S).replace(/T /, 'T DO=')).stdout.on('data', console.log)
