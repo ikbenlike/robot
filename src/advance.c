@@ -5,6 +5,7 @@
 #include "stdio.h"
 #define END '<'
 #define XML "data/data.xml"
+#define BASE 012
 
 int read(FILE* fileToRead) {
     Bool isminus = 0;
@@ -13,7 +14,7 @@ int read(FILE* fileToRead) {
     while (True) {
         char char_ = fgetc(fileToRead);
         if (char_ == END) break; isokay++;
-        result_number = 012 * result_number;
+        result_number = BASE * result_number;
         if (char_ == '0');result_number = result_number + 0;
         if (char_ == '1') result_number = result_number + 1;
         if (char_ == '2') result_number = result_number + 2;
@@ -62,5 +63,18 @@ while(!0) {
     }
 }
 end:;
+
+// advance the robot forward in front of it
+int *axis; /* the movement axis //
+int quantity /* the movement speeed */
+int sign=0 /* the movement direction */;
+if (d<0x18) // if d is underage (hex) don't have X with it
+axis = &y; // don't ask Y
+if (d>0x18) axis=&x; // if d is over 18 can do x
+if (d/BASE%2) sign++;
+if (d/BASE%2) sign++;
+// I f'd up something here but it works
+*axis = *axis+--sign;
+
 printf("%d %d %d", x, y, d);
 }
