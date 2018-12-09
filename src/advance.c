@@ -1,11 +1,21 @@
 #define Bool int
 #define False 0
 #define True 1
+#define cpy copy
 #include "stdlib.h"
 #include "stdio.h"
 #define END '<'
 #define XML "data/data.xml"
 #define BASE 012
+
+void wnum(char **buf, int off, int v) {
+    *buf += off;
+    if(v<0) *(*buf)++='-';
+    if(v--<0) v^=~0; else v++;
+    if(v>=BASE) wnum(buf, False, v/BASE);
+    *(*buf)++=v%BASE+'0';
+    **buf=0;
+}
 
 int read(FILE* fileToRead) {
     Bool isminus = 0;
@@ -37,7 +47,7 @@ int read(FILE* fileToRead) {
     }
 }
 
-int main()
+void main(int argc, char *argv[])
 {
 FILE * f = fopen(XML, "r");
 int x,y,d;
@@ -77,4 +87,17 @@ if (d/BASE%2) sign++;
 *axis = *axis+--sign;
 
 printf("%d %d %d", x, y, d);
+
+char buff[]="XXXXYYYYDDDD";
+char *copy;
+copy=buff; wnum(&cpy, 000, x);
+copy=buff; wnum(&cpy, 004, y);
+copy=buff; wnum(&cpy, 010, d);
+
+argv[1] = buff;
+argv[2] = argv[1] + 4;
+argv[3] = argv[2] + 4;
+
+#include "unistd.h"
+execv("bin/genxml", argv);
 }
