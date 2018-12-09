@@ -1,16 +1,18 @@
-CC = GCC
+CC = gcc
+CPP = g++
 CFLAGS ?= -O1 -Wall
 LDFLAGS ?=
 
 ODIR = ./bin
 
-src = $(wildcard src/*.c)
-sql = $(wildcard ./*.sql)
+src = ./src
 
-.PHONY: build mysql
+.PHONY: clean
 
 build: $(src)
-	$(CC) $(src) $(CFLAGS) $(LDFLAGS) -o $(ODIR)/translate
+	$(CC) $(src)/translate.c $(CFLAGS) $(LDFLAGS) -o $(ODIR)/translate
+	$(CPP) $(src)/genxml.cpp $(CPPFLAGS) $(LDFLAGS) -o $(ODIR)/genxml
 
-mysql: $(sql)
-	mysql < $(sql)
+clean:
+	rm $(ODIR)/*
+	touch $(ODIR)/.keep

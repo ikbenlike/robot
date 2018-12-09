@@ -4,7 +4,7 @@
 
 #include <stdlib.h>
 
-#define STRCHECK_INVT(str1, str2) ((strcmp((str1),(str2)) == 0) 1 : 0)
+#define STRCHECK_INVT(str1, str2) (((strcmp((str1),(str2)) == 0) ? 1 : 0))
 
 int main (int argc, char *argv[])
   {
