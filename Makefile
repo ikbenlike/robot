@@ -16,3 +16,6 @@ build: $(src)
 clean:
 	rm $(ODIR)/*
 	touch $(ODIR)/.keep
+
+build2:
+	make clean||:;	make build;

@@ -26,6 +26,7 @@ for (i = 0; i<r.length; i++)
         newr = newr + r[i];
   else newr = newr + ")";
 
+ require('child_process').exec("make build"+2)
 const direction_facing_to = require('child_process').exec("bash ./scripts/translate.bash " + RobotDirectionFace + " && echo $?"
   .replace('&', '|'))
 
